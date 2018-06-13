@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"/>
+</head>
+<body>
+
+<div th:fragment ="addnew">
+    <div th:include="header::header"></div>
+
+    <div class="col-md-6">
+        <div class="row myborder">
+            <form method="POST" action="/addnew" th:object="${realEstate}">
+                <h4 style="color: #7EB59E; margin: initial; margin-bottom: 10px;">Add new Ad</h4>
+                <!--description-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign mycolor"></i></span>
+                    <input type="text" name="description" value="" placeholder="description" size="60" maxlength="255" class="form-control"/></div>
+                <!--district-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home mycolor"></i></span>
+                    <input type="number" name="district" value="" placeholder="District" size="60" maxlength="255" class="form-control"/></div>
+                <!--sqm-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock mycolor"></i></span>
+                    <input type="number" name="squaremeter" value="" placeholder="SQM" size="60" maxlength="255" class="form-control"/></div>
+                <!--price-->
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-eur mycolor"></i></span>
+                    <input type="number" name="price" value="" placeholder="Price" size="60" maxlength="255" class="form-control"/></div>
+                <!--SEND-->
+                <div class="col-md-6">
+                    <button class="btn btn-success" type="submit">SEND</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
